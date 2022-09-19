@@ -9,7 +9,7 @@
     <div class="slds-grid slds-wrap slds-grid_align-center slds-container_small">
         <template for:each={letters} for:item="l">
             <div key={l} class="slds-col slds-grow-none slds-var-p-horizontal_xxx-small slds-var-p-vertical_xxx-small">
-                <button class="slds-button slds-button_brand letter">{l}</button>
+                <button onclick={handleButtonClick} class="slds-button slds-button_brand letter">{l}</button>
             </div>
             </template>
     </div>
