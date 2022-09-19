@@ -11,9 +11,7 @@ class Game {
         .map((e, i) => String.fromCharCode(i + 65));
 
     constructor() {
-        console.log('Hangman game is starting');
         this.passphrase = new Passphrase();
-        console.log(this.passphrase);
     }
 
     checkLetter(letter) {
