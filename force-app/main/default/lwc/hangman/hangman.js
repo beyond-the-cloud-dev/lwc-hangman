@@ -3,6 +3,7 @@ import { Game } from './game.js';
 
 export default class Hangman extends LightningElement {
 
+    imageUrl;
     passphrase;
 
     connectedCallback() {
@@ -17,6 +18,7 @@ export default class Hangman extends LightningElement {
         event.target.disabled = true;
         this.game.checkLetter(event.target.textContent);
         this.passphrase = this.game.maskedPassphrase;
+        this.imageUrl = this.game.imageUrl;
     }
 
     get letters() {

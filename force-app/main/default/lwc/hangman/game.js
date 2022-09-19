@@ -1,6 +1,9 @@
 import ROUND_IMAGES from '@salesforce/resourceUrl/hangmanResources';
 import { Passphrase } from './passphrase.js'
 class Game {
+
+    round = 0;
+
     letters = Array.from(Array(26))
         .map((e, i) => String.fromCharCode(i + 65));
 
@@ -12,6 +15,13 @@ class Game {
 
     checkLetter(letter) {
         const passphraseContainsLetter = this.passphrase.checkLetter(letter); 
+        if (!passphraseContainsLetter) {
+            this.nextRound();
+        }
+    }
+
+    nextRound() {
+        return this.round++;
     }
 
     get category() {
@@ -19,7 +29,7 @@ class Game {
     }
 
     get imageUrl() {
-        return ROUND_IMAGES + '/images/round-7.png';
+        return `${ROUND_IMAGES}/images/round-${this.round}.png`;
     }
 
     get maskedPassphrase() {
