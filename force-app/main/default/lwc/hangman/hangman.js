@@ -15,6 +15,8 @@ export default class Hangman extends LightningElement {
 
     handleButtonClick(event) {
         event.target.disabled = true;
+        this.game.checkLetter(event.target.textContent);
+        this.passphrase = this.game.maskedPassphrase;
     }
 
     get letters() {

@@ -10,6 +10,10 @@ class Game {
         console.log(this.passphrase);
     }
 
+    checkLetter(letter) {
+        const passphraseContainsLetter = this.passphrase.checkLetter(letter); 
+    }
+
     get category() {
         return this.passphrase.category;
     }
