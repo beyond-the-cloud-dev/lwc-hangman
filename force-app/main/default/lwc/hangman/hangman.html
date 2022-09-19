@@ -1,3 +1,8 @@
 <template>
     <img class="slds-align_absolute-center" style="max-height: 22rem" src={imageUrl}>
+    <template for:each={letters} for:item="l">
+        <div key={l}>
+            <button>{l}</button>
+        </div>
+    </template>
 </template>

@@ -5,7 +5,11 @@ export default class Hangman extends LightningElement {
 
     connectedCallback() {
         console.log('CONNECTED CALLBACK');
-        const game = new Game();
-        this.imageUrl = game.imageUrl;
+        this.game = new Game();
+        this.imageUrl = this.game.imageUrl;
+    }
+
+    get letters() {
+        return this.game.letters;
     }
 }
