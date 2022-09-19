@@ -7,11 +7,17 @@ export default class Hangman extends LightningElement {
     passphrase;
 
     connectedCallback() {
-        console.log('CONNECTED CALLBACK');
+        this.startGame();
+    }
+
+    startGame() {
         this.game = new Game();
         this.imageUrl = this.game.imageUrl;
-        console.log(this.game.passphrase.value);
         this.passphrase = this.game.maskedPassphrase;
+    }
+
+    handleRestartButton() {
+        this.startGame();
     }
 
     handleButtonClick(event) {
@@ -27,5 +33,13 @@ export default class Hangman extends LightningElement {
 
     get category() {
         return this.game.category;
+    }
+
+    get isGameFinished() {
+        return this.game.isGameWon() || this.game.isGameLost();
+    }
+
+    get endGameText() {
+        return this.game.isGameWon() ? 'Congratulations, You win! do you want to try again?' : 'You lose the game, do you want to try again?';
     }
 }

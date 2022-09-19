@@ -7,10 +7,18 @@
         </div>
     </div>
     <div class="slds-grid slds-wrap slds-grid_align-center slds-container_small">
-        <template for:each={letters} for:item="l">
-            <div key={l} class="slds-col slds-grow-none slds-var-p-horizontal_xxx-small slds-var-p-vertical_xxx-small">
+        <template if:false={isGameFinished} for:each={letters} for:item="l">
+            <div key={l} class="slds-col slds-grow-none slds-var-p-horizontal_xxx-small slds-p-vertical_xxx-small">
                 <button onclick={handleButtonClick} class="slds-button slds-button_brand letter">{l}</button>
             </div>
-            </template>
+        </template>
+        <template if:true={isGameFinished}>
+            <div class="slds-box">
+                <div class="slds-text-heading_medium slds-text-align_center slds-p-bottom_medium">{endGameText}
+                </div>
+                <button onclick={handleRestartButton}
+                    class="slds-button slds-align_absolute-center slds-button_brand ">Sure!</button>
+            </div>
+        </template>
     </div>
 </template>

@@ -1,5 +1,8 @@
 import ROUND_IMAGES from '@salesforce/resourceUrl/hangmanResources';
 import { Passphrase } from './passphrase.js'
+
+const NO_OF_ROUNDS = 7;
+
 class Game {
 
     round = 0;
@@ -22,6 +25,14 @@ class Game {
 
     nextRound() {
         return this.round++;
+    }
+
+    isGameWon() {
+        return this.passphrase.value === this.passphrase.maskedValue;
+    }
+
+    isGameLost() {
+        return this.round >= NO_OF_ROUNDS;
     }
 
     get category() {
