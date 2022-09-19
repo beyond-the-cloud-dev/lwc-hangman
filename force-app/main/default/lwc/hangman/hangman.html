@@ -1,5 +1,11 @@
 <template>
     <img class="slds-align_absolute-center" style="max-height: 22rem" src={imageUrl}>
+    <div class="slds-p-bottom_medium">
+        <div class="slds-box">
+            <div class="slds-text-heading_large slds-text-align_center">{passphrase}</div>
+            <div class="slds-text-heading_medium slds-text-align_center slds-p-top_medium">Category: {category}</div>
+        </div>
+    </div>
     <div class="slds-grid slds-wrap slds-grid_align-center slds-container_small">
         <template for:each={letters} for:item="l">
             <div key={l} class="slds-col slds-grow-none slds-var-p-horizontal_xxx-small slds-var-p-vertical_xxx-small">
