@@ -1,3 +1,4 @@
-# License notes:
-- For proper license management each repository should contain LICENSE file similar to this one.
-- each original class should contain copyright mark: © Copyright 2022, Beyond The Cloud Dev Authors
+Hangman game built in LWC.
+
+See more details here: 
+https://beyondthecloud.dev/blog/hangman-in-lwc
